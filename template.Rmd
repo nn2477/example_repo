@@ -2,11 +2,7 @@
 title: "Simple document"
 author: Nhu Nguyen
 date: August 2020
-output: 
-  html_document:
-    toc: true
-    toc_float: true 
-    code_folding: hide
+output: github_document
 ---
 
 I'm an R Markdown document! 
