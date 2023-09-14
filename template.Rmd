@@ -1,0 +1,64 @@
+---
+title: "Simple document"
+author: Nhu Nguyen
+date: August 2020
+output: 
+  html_document:
+    toc: true
+    toc_float: true 
+    code_folding: hide
+---
+
+I'm an R Markdown document! 
+
+# Section 1
+
+Here's a **code chunk** that samples from 
+a _normal distribution_:
+
+```{r}
+# this is a comment -- outside of the code chunk is not code
+samp = rnorm(100)
+length(samp)
+```
+
+# Section 2
+
+I can take the mean of the sample, too!
+The mean is `r mean(samp)`.
+  - you can compute the mean of a sample 
+
+# Section 3
+
+### data frame and plot 
+
+The code chunk below creates a data frame and generates a plot 
+```{r plot_example, messages = FALSE}
+library(tidyverse)
+
+plot_df = tibble(
+  x = rnorm(500, mean = 2, sd = 4),
+  y = 3 - 4.2 * x + rnorm(500)
+)
+
+ggplot(plot_df, aes(x = x, y = y)) + geom_point()
+```
+this plot is really good! it shows a linear relation just as expected. 
+
+the data frame has `r nrow(plot_df)` rows. 
+
+here is a list: 
+
+* This is my first list items
+* lists need at least two items
+  * this list has a sub item 
+* third list item 
+
+###table 
+
+col 1 | col 2
+----- | ------
+a     | b
+c     | d
+
+> this is a block quote. 
